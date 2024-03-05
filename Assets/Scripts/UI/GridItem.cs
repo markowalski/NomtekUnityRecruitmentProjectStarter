@@ -8,7 +8,6 @@ namespace markow
     {
         public void OnPointerClickedHandler()
         {
-            Debug.Log("[GridItem] OnPointerClickedHandler");
         }
     }
 }

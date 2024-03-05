@@ -30,8 +30,6 @@ namespace markow
             .OnUpdate(() => {
                 img.color = new Color(1, 1, 1, alphaValue);
             });
-
-            Debug.Log("[UIHighlighter] Show");
         }
 
         public void Hide() 
@@ -40,8 +38,6 @@ namespace markow
             .OnUpdate(() => {
                 img.color = new Color(1, 1, 1, alphaValue);
             }); 
-
-            Debug.Log("[UIHighlighter] Hide");
         }
 
     }
