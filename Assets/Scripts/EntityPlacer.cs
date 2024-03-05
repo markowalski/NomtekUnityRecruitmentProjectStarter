@@ -6,6 +6,8 @@ namespace markow
 {
     public class EntityPlacer : MonoBehaviour
     {
+        [SerializeField]
+        private LayerMask ignoredLayerMask;
         private GameObject obj;
         private Camera mainCamera;
         private bool isCubeAttached = false;
@@ -50,7 +52,7 @@ namespace markow
             Ray ray = mainCamera.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
 
-            if (Physics.Raycast(ray, out hit, Mathf.Infinity))
+            if (Physics.Raycast(ray, out hit, Mathf.Infinity, ~ignoredLayerMask))
             {
                 if (hit.collider.gameObject.CompareTag("Floor"))
                 {

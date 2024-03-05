@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1824574814012223374}
   - component: {fileID: 897470014418415067}
   - component: {fileID: 1561205860347570065}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -91,10 +91,20 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4964434157428405672, guid: c834107870cb5304e8dc8f7a175feae2,
+        type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 5831765519411015990, guid: c834107870cb5304e8dc8f7a175feae2,
         type: 3}
       propertyPath: m_Name
-      value: EntityPrefab
+      value: EntityCubeRed
+      objectReference: {fileID: 0}
+    - target: {fileID: 5831765519411015990, guid: c834107870cb5304e8dc8f7a175feae2,
+        type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7285397693411641818, guid: c834107870cb5304e8dc8f7a175feae2,
         type: 3}

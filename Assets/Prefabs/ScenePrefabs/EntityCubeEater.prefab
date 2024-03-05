@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 852898102061427764}
   - component: {fileID: 8721116832616905339}
   - component: {fileID: 4607187668906133312}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Face
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -94,7 +94,7 @@ GameObject:
   - component: {fileID: 1132448108105241547}
   - component: {fileID: 200121440430958532}
   - component: {fileID: 9028941515203598673}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Sphere
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -175,10 +175,20 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4964434157428405672, guid: c834107870cb5304e8dc8f7a175feae2,
+        type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 5831765519411015990, guid: c834107870cb5304e8dc8f7a175feae2,
         type: 3}
       propertyPath: m_Name
       value: EntityCubeEater
+      objectReference: {fileID: 0}
+    - target: {fileID: 5831765519411015990, guid: c834107870cb5304e8dc8f7a175feae2,
+        type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7285397693411641818, guid: c834107870cb5304e8dc8f7a175feae2,
         type: 3}
