@@ -31,9 +31,15 @@ namespace markow
                 GridItem gridItemObj = Instantiate(gridItemPrefab, itemContainer);
                 gridItemObj.name = list[i].title;
                 gridItemObj.Setup(list[i].content);
+                gridItemObj.OnGridItemSelectedEvDispatcher.AddListener(OnGridItemClickedEvHandler);
 
                 instantiatedItems.Add(gridItemObj);
             }
+        }
+
+        private void OnGridItemClickedEvHandler(ENTITY_TYPE _type)
+        {
+            Debug.Log("[GridMenu] OnGridItemClickedEvHandler " + _type.ToString());
         }
 
         public void FilterGridMenu(string _str)
