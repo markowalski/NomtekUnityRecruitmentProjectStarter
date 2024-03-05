@@ -101,5 +101,14 @@ namespace markow
                 transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * angularSpeed);
             }
         }
+
+        void OnCollisionEnter(Collision collision)
+        {
+            if (collision.gameObject.CompareTag(targetTag))
+            {
+                collision.gameObject.GetComponent<Entity>().SetState(ENTITY_STATE.Destroyed);
+                FindClosestTarget();
+            }
+        }
     }
 }
