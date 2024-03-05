@@ -5,6 +5,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Events;
 using static markow.GridItemListSO;
+using DG.Tweening;
 
 namespace markow
 {
@@ -19,11 +20,28 @@ namespace markow
         private Transform itemContainer;
         [SerializeField]
         private GridItem gridItemPrefab;
+
         private List<GridItem> instantiatedItems = new List<GridItem>();
+        private RectTransform rTransform;
+
+        private void Awake()
+        {
+            rTransform = GetComponent<RectTransform>();
+        }
 
         private void Start()
         {
             SetupGrid();
+        }
+
+        public void Show()
+        {
+            rTransform.DOAnchorPosX(25f, .5f).SetEase(Ease.OutCubic);
+        }
+
+        public void Hide()
+        {
+            rTransform.DOAnchorPosX(-rTransform.rect.width, .5f).SetEase(Ease.InCubic);
         }
 
         private void SetupGrid()
@@ -46,6 +64,8 @@ namespace markow
             Debug.Log("[GridMenu] OnGridItemClickedEvHandler " + _type.ToString());
 
             OnGridMenuItemSelectedEvDispatcher?.Invoke(_type);
+
+            Hide();
         }
 
         public void FilterGridMenu(string _str)
