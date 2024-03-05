@@ -58,9 +58,13 @@ namespace markow
             GameObject[] targets = GameObject.FindGameObjectsWithTag(targetTag);
             float minDistance = Mathf.Infinity;
             GameObject closest = null;
+            Entity targetEntity = null;
 
             foreach (GameObject potentialTarget in targets)
             {
+                targetEntity = potentialTarget.GetComponent<Entity>();
+                if (targetEntity && targetEntity.GetState() != ENTITY_STATE.Detached) continue;
+
                 float distance = Vector3.Distance(transform.position, potentialTarget.transform.position);
                 if (distance < minDistance)
                 {
