@@ -14,14 +14,14 @@ namespace markow
             
         }
 
-        private void Show()
+        public void Show()
         {
-            
+            Debug.Log("[UIHighlighter] Show");
         }
 
-        private void Hide() 
+        public void Hide() 
         {
-            
+            Debug.Log("[UIHighlighter] Hide");
         }
 
     }
