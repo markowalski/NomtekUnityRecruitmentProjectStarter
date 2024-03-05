@@ -1,11 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace markow
 {
     public class EntityPlacer : MonoBehaviour
     {
+        public class OnEntityDetachedEv : UnityEvent<GameObject> { }
+        public OnEntityDetachedEv OnEntityDetachedEvDispatcher = new OnEntityDetachedEv();
+
         [SerializeField]
         private LayerMask ignoredLayerMask;
         private GameObject obj;
@@ -65,6 +69,8 @@ namespace markow
         {
             isCubeAttached = false;
             obj = null;
+
+            OnEntityDetachedEvDispatcher?.Invoke(obj);
         }
     }
 }

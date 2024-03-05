@@ -20,6 +20,12 @@ namespace markow
             entityPlacer = GetComponent<EntityPlacer>();
 
             GridMenu.OnGridMenuItemSelectedEvDispatcher.AddListener(OnGridMenuItemSelectedEvHandler);
+            entityPlacer.OnEntityDetachedEvDispatcher.AddListener(OnEntityDetachedEvHandler);
+        }
+
+        private void OnEntityDetachedEvHandler(GameObject _obj)
+        {
+            
         }
 
         private void OnGridMenuItemSelectedEvHandler(ENTITY_TYPE _type)
