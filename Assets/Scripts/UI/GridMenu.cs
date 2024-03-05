@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
@@ -14,6 +15,7 @@ namespace markow
         private Transform itemContainer;
         [SerializeField]
         private GridItem gridItemPrefab;
+        private List<GridItem> instantiatedItems = new List<GridItem>();
 
         private void Start()
         {
@@ -29,6 +31,18 @@ namespace markow
                 GridItem gridItemObj = Instantiate(gridItemPrefab, itemContainer);
                 gridItemObj.name = list[i].title;
                 gridItemObj.Setup(list[i].content);
+
+                instantiatedItems.Add(gridItemObj);
+            }
+        }
+
+        public void FilterGridMenu(string _str)
+        {
+            for (int i = 0; i < instantiatedItems.Count; i++)
+            {
+                if (instantiatedItems[i].name.IndexOf(_str, StringComparison.OrdinalIgnoreCase) >= 0)
+                    instantiatedItems[i].gameObject.SetActive(true);
+                else instantiatedItems[i].gameObject.SetActive(false);
             }
         }
     }
