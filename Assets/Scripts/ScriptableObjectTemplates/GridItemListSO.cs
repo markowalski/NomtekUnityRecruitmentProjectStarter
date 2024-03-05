@@ -17,5 +17,10 @@ namespace markow
             public string title;
             public GridItemSO content;
         }
+
+        public List<GridItemListField> GetGridItemList()
+        {
+            return gridItemList;
+        }
     }
 }

@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ce3e143bfd2bc842b81d835b71983d1, type: 3}
   m_Name: GreenCubeCFG
   m_EditorClassIdentifier: 
-  name: 
-  sprite: {fileID: 0}
+  name: GreenCube
+  sprite: {fileID: 21300000, guid: ed02862267fcead45ae33f85a0f4bbd6, type: 3}
   prefab: {fileID: 0}

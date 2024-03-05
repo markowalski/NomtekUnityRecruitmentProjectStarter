@@ -12,4 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef24fc86c0fece64ca0fcd195bfba508, type: 3}
   m_Name: GridItemListCFG
   m_EditorClassIdentifier: 
-  gridItemList: []
+  gridItemList:
+  - title: BlueCube
+    content: {fileID: 11400000, guid: 468b7f1420425df40895c94de8588568, type: 2}
+  - title: GreenCube
+    content: {fileID: 11400000, guid: dd8610760a51ac84998d2e72bfab1df6, type: 2}
+  - title: RedCube
+    content: {fileID: 11400000, guid: 4675060c46fb34d46918a84c09d0b2f5, type: 2}
+  - title: CubeEater
+    content: {fileID: 11400000, guid: 9cb5e680df635244db18f703777b5db7, type: 2}
