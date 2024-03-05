@@ -7,4 +7,12 @@ namespace markow
         Green,
         CubeEater
     }
+
+    public enum ENTITY_STATE
+    {
+        Disabled,
+        Initialized,
+        Detached,
+        Destroyed
+    }
 }
