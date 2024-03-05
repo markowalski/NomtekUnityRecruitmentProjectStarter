@@ -3,12 +3,16 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Events;
 using static markow.GridItemListSO;
 
 namespace markow
 {
     public class GridMenu : MonoBehaviour
     {
+        public class OnGridMenuItemSelectedEv : UnityEvent<ENTITY_TYPE> { }
+        public OnGridMenuItemSelectedEv OnGridMenuItemSelectedEvDispatcher = new OnGridMenuItemSelectedEv();
+
         [SerializeField]
         private GridItemListSO gridItemListCFG;
         [SerializeField]
@@ -40,6 +44,8 @@ namespace markow
         private void OnGridItemClickedEvHandler(ENTITY_TYPE _type)
         {
             Debug.Log("[GridMenu] OnGridItemClickedEvHandler " + _type.ToString());
+
+            OnGridMenuItemSelectedEvDispatcher?.Invoke(_type);
         }
 
         public void FilterGridMenu(string _str)
