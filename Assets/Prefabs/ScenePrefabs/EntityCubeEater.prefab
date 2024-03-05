@@ -178,7 +178,7 @@ PrefabInstance:
     - target: {fileID: 5831765519411015990, guid: c834107870cb5304e8dc8f7a175feae2,
         type: 3}
       propertyPath: m_Name
-      value: EntityPrefab
+      value: EntityCubeEater
       objectReference: {fileID: 0}
     - target: {fileID: 7285397693411641818, guid: c834107870cb5304e8dc8f7a175feae2,
         type: 3}
@@ -263,3 +263,21 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 2095208541812877481}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &5619712535944206751 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5831765519411015990, guid: c834107870cb5304e8dc8f7a175feae2,
+    type: 3}
+  m_PrefabInstance: {fileID: 2095208541812877481}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &9176096898265308328
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5619712535944206751}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ecbdaa3bd1447fc4ca69928e7f8abce1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
