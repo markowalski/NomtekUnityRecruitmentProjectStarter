@@ -292,3 +292,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 3
+  targetTag: Cube
+  speed: 5
+  angularSpeed: 120
