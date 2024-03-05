@@ -1876,6 +1876,14 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 1509681788}
     m_Modifications:
+    - target: {fileID: 762448389, guid: 8b0a39299e2f32847990c40335fe475b, type: 3}
+      propertyPath: m_RaycastTarget
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1367266427, guid: 8b0a39299e2f32847990c40335fe475b, type: 3}
+      propertyPath: m_RaycastTarget
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1563255850401155658, guid: 8b0a39299e2f32847990c40335fe475b,
         type: 3}
       propertyPath: m_Name
@@ -1984,6 +1992,11 @@ PrefabInstance:
     - target: {fileID: 8801650548093395222, guid: 8b0a39299e2f32847990c40335fe475b,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9012964596541392601, guid: 8b0a39299e2f32847990c40335fe475b,
+        type: 3}
+      propertyPath: m_RaycastTarget
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
