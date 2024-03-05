@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: CubeEater
   sprite: {fileID: 21300000, guid: f90816aa6521e824683135f8b8c09531, type: 3}
-  prefab: {fileID: 0}
+  entity: {fileID: 9176096898265308328, guid: 0b62daedacc97ec4a9fb72f680e628c4, type: 3}

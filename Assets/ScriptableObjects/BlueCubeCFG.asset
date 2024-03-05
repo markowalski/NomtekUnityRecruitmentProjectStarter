@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: BlueCube
   sprite: {fileID: 21300000, guid: 5fcdd973e7e0dc34bba4a076b3cd5266, type: 3}
-  prefab: {fileID: 0}
+  entity: {fileID: 1279514681271000907, guid: 9743bdd135fc9b445a95c2527ab976af, type: 3}
