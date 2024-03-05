@@ -28,11 +28,13 @@ namespace markow
 
         private void OnInitializedStateEnter()
         {
+            this.gameObject.GetComponent<Rigidbody>().isKinematic = true;
             Debug.Log("[CubeEater] OnInitializedStateEnter");
         }
 
         private void OnDetachedStateEnter()
         {
+            
             Debug.Log("[CubeEater] OnDetachedStateEnter");
         }
 
