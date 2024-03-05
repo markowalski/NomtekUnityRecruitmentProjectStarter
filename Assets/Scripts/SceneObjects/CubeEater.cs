@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -81,6 +82,23 @@ namespace markow
             else
             {
                 target = null;
+            }
+        }
+
+        private void Update()
+        {
+            MoveTowardClosestTarget();
+        }
+
+        private void MoveTowardClosestTarget()
+        {
+            if (target != null)
+            {
+                Vector3 direction = (target.position - transform.position).normalized;
+                transform.position += direction * speed * Time.deltaTime;
+
+                Quaternion lookRotation = Quaternion.LookRotation(direction);
+                transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * angularSpeed);
             }
         }
     }
