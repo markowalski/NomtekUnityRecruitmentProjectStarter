@@ -359,7 +359,7 @@ RectTransform:
   - {fileID: 1798300111}
   - {fileID: 1183484967612586071}
   m_Father: {fileID: 0}
-  m_RootOrder: -1
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -378,6 +378,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 814a10bda770bcb4e93c546909d40458, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  img: {fileID: 842863221}
+  desc: {fileID: 762448389}
 --- !u!114 &9191129040263778804
 MonoBehaviour:
   m_ObjectHideFlags: 0

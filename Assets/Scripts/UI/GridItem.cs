@@ -8,7 +8,9 @@ namespace markow
 {
     public class GridItem : MonoBehaviour
     {
+        [SerializeField]
         private Image img;
+        [SerializeField]
         private TMPro.TextMeshProUGUI desc;
 
         public void Setup(GridItemSO _gridItemSO)

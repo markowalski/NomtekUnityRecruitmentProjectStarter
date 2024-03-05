@@ -28,6 +28,7 @@ namespace markow
             {
                 GridItem gridItemObj = Instantiate(gridItemPrefab, itemContainer);
                 gridItemObj.name = list[i].title;
+                gridItemObj.Setup(list[i].content);
             }
         }
     }
