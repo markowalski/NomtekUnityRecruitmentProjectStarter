@@ -5,16 +5,20 @@ using UnityEngine;
 
 namespace markow
 {
+    [RequireComponent(typeof(EntityPlacer))]
     public class EntityManager : MonoBehaviour
     {
         [SerializeField]
         private Transform entityContainer;
-
         [SerializeField]
         private List<Entity> entities = new List<Entity>();
+        private EntityPlacer entityPlacer;
+
 
         private void Awake()
         {
+            entityPlacer = GetComponent<EntityPlacer>();
+
             GridMenu.OnGridMenuItemSelectedEvDispatcher.AddListener(OnGridMenuItemSelectedEvHandler);
         }
 
@@ -30,6 +34,8 @@ namespace markow
                 if (entity.type == _type)
                 {
                     GameObject entityObj = Instantiate(entity.gameObject, entityContainer);
+                    entityPlacer.Init(entityObj);
+
                     break;
                 }
 

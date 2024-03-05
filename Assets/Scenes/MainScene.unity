@@ -291,9 +291,9 @@ GameObject:
   - component: {fileID: 125515513}
   - component: {fileID: 125515512}
   - component: {fileID: 125515511}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Floor
-  m_TagString: Untagged
+  m_TagString: Floor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1075,6 +1075,7 @@ GameObject:
   m_Component:
   - component: {fileID: 828366482}
   - component: {fileID: 828366483}
+  - component: {fileID: 828366484}
   m_Layer: 0
   m_Name: EntityManager
   m_TagString: Untagged
@@ -1115,6 +1116,18 @@ MonoBehaviour:
   - {fileID: 1365265846706782182, guid: 22df23677ba261c439e87279d2b39363, type: 3}
   - {fileID: 1279514681271000907, guid: 9743bdd135fc9b445a95c2527ab976af, type: 3}
   - {fileID: 9176096898265308328, guid: 0b62daedacc97ec4a9fb72f680e628c4, type: 3}
+--- !u!114 &828366484
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 828366481}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c125a5efabdfeb9418aed1008729efd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &849838902
 GameObject:
   m_ObjectHideFlags: 0
