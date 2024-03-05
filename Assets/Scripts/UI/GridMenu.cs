@@ -12,7 +12,7 @@ namespace markow
     public class GridMenu : MonoBehaviour
     {
         public class OnGridMenuItemSelectedEv : UnityEvent<ENTITY_TYPE> { }
-        public OnGridMenuItemSelectedEv OnGridMenuItemSelectedEvDispatcher = new OnGridMenuItemSelectedEv();
+        public static OnGridMenuItemSelectedEv OnGridMenuItemSelectedEvDispatcher = new OnGridMenuItemSelectedEv();
 
         [SerializeField]
         private GridItemListSO gridItemListCFG;
