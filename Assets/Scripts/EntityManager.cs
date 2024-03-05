@@ -29,6 +29,7 @@ namespace markow
 
         private void OnEntityDetachedEvHandler(GameObject _obj)
         {
+            _obj.GetComponent<Entity>().SetState(ENTITY_STATE.Detached);
             OnEntityPlaceddEvDispatcher?.Invoke();
         }
 
@@ -44,6 +45,7 @@ namespace markow
                 if (entity.type == _type)
                 {
                     GameObject entityObj = Instantiate(entity.gameObject, entityContainer);
+                    entityObj.GetComponent<Entity>().SetState(ENTITY_STATE.Initialized);
                     entityPlacer.Init(entityObj);
 
                     break;
