@@ -178,12 +178,27 @@ PrefabInstance:
     - target: {fileID: 5831765519411015990, guid: c834107870cb5304e8dc8f7a175feae2,
         type: 3}
       propertyPath: m_Name
-      value: EntityPrefab
+      value: EntityCubeEater
       objectReference: {fileID: 0}
     - target: {fileID: 7285397693411641818, guid: c834107870cb5304e8dc8f7a175feae2,
         type: 3}
       propertyPath: m_RootOrder
       value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 7285397693411641818, guid: c834107870cb5304e8dc8f7a175feae2,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7285397693411641818, guid: c834107870cb5304e8dc8f7a175feae2,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7285397693411641818, guid: c834107870cb5304e8dc8f7a175feae2,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7285397693411641818, guid: c834107870cb5304e8dc8f7a175feae2,
         type: 3}
