@@ -92,7 +92,7 @@ namespace markow
 
         private void MoveTowardClosestTarget()
         {
-            if (target != null)
+            if (state == ENTITY_STATE.Detached && target != null)
             {
                 Vector3 direction = (target.position - transform.position).normalized;
                 transform.position += direction * speed * Time.deltaTime;
@@ -104,7 +104,7 @@ namespace markow
 
         void OnCollisionEnter(Collision collision)
         {
-            if (collision.gameObject.CompareTag(targetTag))
+            if (state == ENTITY_STATE.Detached && collision.gameObject.CompareTag(targetTag))
             {
                 collision.gameObject.GetComponent<Entity>().SetState(ENTITY_STATE.Destroyed);
                 FindClosestTarget();
