@@ -67,10 +67,12 @@ namespace markow
 
         private void DetachCube()
         {
+            OnEntityDetachedEvDispatcher?.Invoke(obj);
+
             isCubeAttached = false;
             obj = null;
 
-            OnEntityDetachedEvDispatcher?.Invoke(obj);
+            
         }
     }
 }

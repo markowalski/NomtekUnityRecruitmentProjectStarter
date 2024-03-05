@@ -28,12 +28,12 @@ namespace markow
 
         private void OnInitializedStateEnter()
         {
-            
+            Debug.Log("[Cube] OnInitializedStateEnter");
         }
 
         private void OnDetachedStateEnter()
         {
-            
+            Debug.Log("[Cube] OnDetachedStateEnter");
         }
 
         private void OnDestroyedStateEnter()
