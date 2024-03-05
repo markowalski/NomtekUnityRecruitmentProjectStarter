@@ -8,6 +8,11 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2189104136591231655, guid: 103441daf3dfff04f81fd3e856ced4cb,
+        type: 3}
+      propertyPath: type
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 6177547892814476435, guid: 103441daf3dfff04f81fd3e856ced4cb,
         type: 3}
       propertyPath: m_RootOrder
@@ -71,7 +76,7 @@ PrefabInstance:
     - target: {fileID: 6939895678255910015, guid: 103441daf3dfff04f81fd3e856ced4cb,
         type: 3}
       propertyPath: m_Name
-      value: EntityPrefab
+      value: EntityCubeGreen
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []

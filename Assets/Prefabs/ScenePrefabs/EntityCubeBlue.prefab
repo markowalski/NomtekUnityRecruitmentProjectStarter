@@ -94,7 +94,7 @@ PrefabInstance:
     - target: {fileID: 5831765519411015990, guid: c834107870cb5304e8dc8f7a175feae2,
         type: 3}
       propertyPath: m_Name
-      value: EntityPrefab
+      value: EntityCubeBlue
       objectReference: {fileID: 0}
     - target: {fileID: 7285397693411641818, guid: c834107870cb5304e8dc8f7a175feae2,
         type: 3}
@@ -182,3 +182,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 94f05bde398c42949aa2ff0f34aee652, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  type: 1
