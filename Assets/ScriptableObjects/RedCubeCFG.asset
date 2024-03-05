@@ -13,5 +13,6 @@ MonoBehaviour:
   m_Name: RedCubeCFG
   m_EditorClassIdentifier: 
   name: RedCube
-  sprite: {fileID: 21300000, guid: d9092e9957be2904cb7d6d3d36a67c5b, type: 3}
+  sprite: {fileID: 21300000, guid: 9e0f8e32c4b303c47bad12f0f44f06a1, type: 3}
   entity: {fileID: 2189104136591231655, guid: 103441daf3dfff04f81fd3e856ced4cb, type: 3}
+  type: 0

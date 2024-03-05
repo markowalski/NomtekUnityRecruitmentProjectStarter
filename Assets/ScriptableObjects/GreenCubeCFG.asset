@@ -13,5 +13,6 @@ MonoBehaviour:
   m_Name: GreenCubeCFG
   m_EditorClassIdentifier: 
   name: GreenCube
-  sprite: {fileID: 21300000, guid: ed02862267fcead45ae33f85a0f4bbd6, type: 3}
+  sprite: {fileID: 21300000, guid: d3b85295b8c2b0a41b04d08e5f136a08, type: 3}
   entity: {fileID: 1365265846706782182, guid: 22df23677ba261c439e87279d2b39363, type: 3}
+  type: 2
