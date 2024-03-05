@@ -2,12 +2,16 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace markow
 {
     [RequireComponent(typeof(EntityPlacer))]
     public class EntityManager : MonoBehaviour
     {
+        public class OnEntityPlaceddEv : UnityEvent { }
+        public static OnEntityPlaceddEv OnEntityPlaceddEvDispatcher = new OnEntityPlaceddEv();
+
         [SerializeField]
         private Transform entityContainer;
         [SerializeField]
@@ -25,7 +29,7 @@ namespace markow
 
         private void OnEntityDetachedEvHandler(GameObject _obj)
         {
-            
+            OnEntityPlaceddEvDispatcher?.Invoke();
         }
 
         private void OnGridMenuItemSelectedEvHandler(ENTITY_TYPE _type)

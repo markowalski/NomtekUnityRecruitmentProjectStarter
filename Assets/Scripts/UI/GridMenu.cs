@@ -27,6 +27,8 @@ namespace markow
         private void Awake()
         {
             rTransform = GetComponent<RectTransform>();
+
+            EntityManager.OnEntityPlaceddEvDispatcher.AddListener(Show);
         }
 
         private void Start()
