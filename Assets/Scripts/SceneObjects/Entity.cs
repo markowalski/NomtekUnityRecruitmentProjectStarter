@@ -6,5 +6,6 @@ namespace markow
 {
     public class Entity : MonoBehaviour
     {
+
     }
 }

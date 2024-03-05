@@ -17,7 +17,12 @@ namespace markow
 
         private void OnGridMenuItemSelectedEvHandler(ENTITY_TYPE _type)
         {
-            
+            SetupEntity(_type);
+        }
+
+        public void SetupEntity(ENTITY_TYPE _type)
+        {
+
         }
     }
 }

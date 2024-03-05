@@ -10,7 +10,6 @@ namespace markow
     {
         public new string name;
         public Sprite sprite;
-        public Entity entity;
         public ENTITY_TYPE type;
     }
 }
