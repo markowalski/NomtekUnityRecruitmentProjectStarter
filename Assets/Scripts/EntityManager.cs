@@ -22,8 +22,6 @@ namespace markow
         private void Awake()
         {
             entityPlacer = GetComponent<EntityPlacer>();
-
-            GridMenu.OnGridMenuItemSelectedEvDispatcher.AddListener(OnGridMenuItemSelectedEvHandler);
             entityPlacer.OnEntityDetachedEvDispatcher.AddListener(OnEntityDetachedEvHandler);
         }
 

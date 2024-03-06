@@ -15,6 +15,12 @@ namespace markow
         private void Awake()
         {
             entityManager.OnEntityPlaceddEvDispatcher.AddListener(OnEntityPlaceddEvHandler);
+            gridMenu.OnGridMenuItemSelectedEvDispatcher.AddListener(OnGridMenuItemSelectedEvHandler);
+        }
+
+        private void OnGridMenuItemSelectedEvHandler(ENTITY_TYPE _type)
+        {
+            entityManager.SetupEntity(_type);
         }
 
         private void OnEntityPlaceddEvHandler()
