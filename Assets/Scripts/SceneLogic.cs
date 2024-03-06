@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,16 +7,19 @@ namespace markow
 {
     public class SceneLogic : MonoBehaviour
     {
-        // Start is called before the first frame update
-        void Start()
-        {
+        [SerializeField]
+        private EntityManager entityManager;
+        [SerializeField]
+        private GridMenu gridMenu;
 
+        private void Awake()
+        {
+            entityManager.OnEntityPlaceddEvDispatcher.AddListener(OnEntityPlaceddEvHandler);
         }
 
-        // Update is called once per frame
-        void Update()
+        private void OnEntityPlaceddEvHandler()
         {
-
+            gridMenu.Show();
         }
     }
 }

@@ -28,8 +28,6 @@ namespace markow
         private void Awake()
         {
             rTransform = GetComponent<RectTransform>();
-
-            EntityManager.OnEntityPlaceddEvDispatcher.AddListener(Show);
         }
 
         private void Start()
@@ -55,7 +53,7 @@ namespace markow
 
         private void SetupGrid()
         {
-            List<GridItemListField> list = gridItemListCFG.GetGridItemList();
+            List<GridItemListField> list = gridItemListCFG.GridItemList;
 
             for (int i = 0; i < list.Count; i++)
             {
@@ -70,10 +68,7 @@ namespace markow
 
         private void OnGridItemClickedEvHandler(ENTITY_TYPE _type)
         {
-            Debug.Log("[GridMenu] OnGridItemClickedEvHandler " + _type.ToString());
-
             OnGridMenuItemSelectedEvDispatcher?.Invoke(_type);
-
             Hide();
         }
 

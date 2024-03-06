@@ -8,9 +8,9 @@ namespace markow
     {
         public override void SetState(ENTITY_STATE _state)
         {
-            state = _state;
+            entityState = _state;
 
-            switch (state)
+            switch (entityState)
             {
                 case ENTITY_STATE.Disabled:
                     break;
@@ -29,13 +29,11 @@ namespace markow
         private void OnInitializedStateEnter()
         {
             this.gameObject.GetComponent<Rigidbody>().isKinematic = true;
-            Debug.Log("[Cube] OnInitializedStateEnter");
         }
 
         private void OnDetachedStateEnter()
         {
             this.gameObject.GetComponent<Rigidbody>().isKinematic = false;
-            Debug.Log("[Cube] OnDetachedStateEnter");
         }
 
         private void OnDestroyedStateEnter()

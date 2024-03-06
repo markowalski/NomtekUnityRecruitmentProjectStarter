@@ -19,9 +19,9 @@ namespace markow
 
         public override void SetState(ENTITY_STATE _state)
         {
-            state = _state;
+            entityState = _state;
 
-            switch (state)
+            switch (entityState)
             {
                 case ENTITY_STATE.Disabled:
                     break;
@@ -40,13 +40,11 @@ namespace markow
         private void OnInitializedStateEnter()
         {
             this.gameObject.GetComponent<Rigidbody>().isKinematic = true;
-            Debug.Log("[CubeEater] OnInitializedStateEnter");
         }
 
         private void OnDetachedStateEnter()
         {
             FindClosestTarget();
-            Debug.Log("[CubeEater] OnDetachedStateEnter");
         }
 
         private void OnDestroyedStateEnter()
@@ -64,7 +62,7 @@ namespace markow
             foreach (GameObject potentialTarget in targets)
             {
                 targetEntity = potentialTarget.GetComponent<Entity>();
-                if (targetEntity && targetEntity.GetState() != ENTITY_STATE.Detached) continue;
+                if (targetEntity && targetEntity.EntityState != ENTITY_STATE.Detached) continue;
 
                 float distance = Vector3.Distance(transform.position, potentialTarget.transform.position);
                 if (distance < minDistance)
@@ -77,7 +75,6 @@ namespace markow
             if (closest != null)
             {
                 target = closest.transform;
-                Debug.Log("[CubeEater] FindClosestTarget " + target.name, target);
             }
             else
             {
@@ -92,7 +89,7 @@ namespace markow
 
         private void MoveTowardClosestTarget()
         {
-            if (state == ENTITY_STATE.Detached && target != null)
+            if (entityState == ENTITY_STATE.Detached && target != null)
             {
                 Vector3 direction = (target.position - transform.position).normalized;
                 transform.position += direction * speed * Time.deltaTime;
@@ -104,7 +101,7 @@ namespace markow
 
         void OnCollisionEnter(Collision collision)
         {
-            if (state == ENTITY_STATE.Detached && collision.gameObject.CompareTag(targetTag))
+            if (entityState == ENTITY_STATE.Detached && collision.gameObject.CompareTag(targetTag))
             {
                 collision.gameObject.GetComponent<Entity>().SetState(ENTITY_STATE.Destroyed);
                 FindClosestTarget();

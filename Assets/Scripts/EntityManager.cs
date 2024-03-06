@@ -10,7 +10,7 @@ namespace markow
     public class EntityManager : MonoBehaviour
     {
         public class OnEntityPlaceddEv : UnityEvent { }
-        public static OnEntityPlaceddEv OnEntityPlaceddEvDispatcher = new OnEntityPlaceddEv();
+        public OnEntityPlaceddEv OnEntityPlaceddEvDispatcher = new OnEntityPlaceddEv();
 
         [SerializeField]
         private Transform entityContainer;
@@ -42,7 +42,7 @@ namespace markow
         {
             foreach (var entity in entities)
             {
-                if (entity.type == _type)
+                if (entity.EntityType == _type)
                 {
                     GameObject entityObj = Instantiate(entity.gameObject, entityContainer);
                     entityObj.GetComponent<Entity>().SetState(ENTITY_STATE.Initialized);

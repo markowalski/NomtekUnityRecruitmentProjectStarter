@@ -8,9 +8,6 @@ namespace markow
     [CreateAssetMenu(fileName = "GridItemList", menuName = "GridMenu/GridItemList")]
     public class GridItemListSO : ScriptableObject
     {
-        [SerializeField]
-        private List<GridItemListField> gridItemList;
-
         [Serializable]
         public struct GridItemListField
         {
@@ -18,9 +15,13 @@ namespace markow
             public GridItemSO content;
         }
 
-        public List<GridItemListField> GetGridItemList()
+        [SerializeField]
+        private List<GridItemListField> gridItemList;
+
+        public List<GridItemListField> GridItemList
         {
-            return gridItemList;
+            get => gridItemList;
+            private set => gridItemList = value;
         }
     }
 }

@@ -12,7 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ce3e143bfd2bc842b81d835b71983d1, type: 3}
   m_Name: BlueCubeCFG
   m_EditorClassIdentifier: 
-  name: BlueCube
+  itemName: BlueCube
   sprite: {fileID: 21300000, guid: bcd82d7990bb938408ea5b5f061812e4, type: 3}
-  entity: {fileID: 1279514681271000907, guid: 9743bdd135fc9b445a95c2527ab976af, type: 3}
   type: 1

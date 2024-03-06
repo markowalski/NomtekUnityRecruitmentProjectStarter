@@ -20,9 +20,9 @@ namespace markow
 
         public void Setup(GridItemSO _gridItemSO)
         {
-            img.sprite = _gridItemSO.sprite;
-            desc.text = _gridItemSO.name;
-            type = _gridItemSO.type;
+            img.sprite = _gridItemSO.Sprite;
+            desc.text = _gridItemSO.ItemName;
+            type = _gridItemSO.Type;
         }
 
         public void OnPointerClickedHandler()

@@ -71,8 +71,6 @@ namespace markow
 
             isCubeAttached = false;
             obj = null;
-
-            
         }
     }
 }

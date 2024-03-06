@@ -291,7 +291,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ecbdaa3bd1447fc4ca69928e7f8abce1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 3
+  entityType: 3
   targetTag: Cube
   speed: 5
   angularSpeed: 6

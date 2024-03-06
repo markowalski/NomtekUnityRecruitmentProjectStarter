@@ -12,7 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ce3e143bfd2bc842b81d835b71983d1, type: 3}
   m_Name: CubeEaterCFG
   m_EditorClassIdentifier: 
-  name: CubeEater
+  itemName: CubeEater
   sprite: {fileID: 21300000, guid: 8838343c2cd21c247bf7b06d0bb81f49, type: 3}
-  entity: {fileID: 9176096898265308328, guid: 0b62daedacc97ec4a9fb72f680e628c4, type: 3}
   type: 3
