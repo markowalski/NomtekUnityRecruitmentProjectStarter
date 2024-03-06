@@ -12,7 +12,7 @@ namespace markow
         private LayerMask ignoredLayerMask;
         private GameObject obj;
         private Camera mainCamera;
-        private bool isCubeAttached = false;
+        private bool isEntityAttached = false;
 
         void Start()
         {
@@ -23,21 +23,21 @@ namespace markow
         {
             obj = _obj;
 
-            if (!isCubeAttached) AttachCubeToCursor();
+            if (!isEntityAttached) AttachCubeToCursor();
         }
 
 
         private void Update()
         {
-            if (isCubeAttached && Input.GetMouseButtonDown(0))
+            if (isEntityAttached && Input.GetMouseButtonDown(0))
             {
-                DetachCube();
+                DetachEntity();
             }
 
 
-            if (isCubeAttached && obj != null)
+            if (isEntityAttached && obj != null)
             {
-                MoveCubeWithCursor();
+                MoveEntityWithCursor();
             }
         }
 
@@ -45,11 +45,11 @@ namespace markow
         {
             if (obj != null)
             {
-                isCubeAttached = true;
+                isEntityAttached = true;
             }
         }
 
-        private void MoveCubeWithCursor()
+        private void MoveEntityWithCursor()
         {
             Ray ray = mainCamera.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
@@ -63,17 +63,17 @@ namespace markow
             }
         }
 
-        private void DetachCube()
+        private void DetachEntity()
         {
             OnEntityDetachedEvDispatcher?.Invoke(obj);
 
-            isCubeAttached = false;
+            isEntityAttached = false;
             obj = null;
         }
 
         public void Reset()
         {
-            isCubeAttached = false;
+            isEntityAttached = false;
             obj = null;
         }
     }
