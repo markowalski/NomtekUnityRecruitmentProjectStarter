@@ -2,6 +2,11 @@ using UnityEngine;
 
 namespace markow
 {
+    /*
+    *  Similar to GridItemListSO, a class that serves as a template for creating ScriptableObjects for each type of object appearing in the GridMenu list
+    *  All variables, although available from the Unity Inspector, are hidden with an access modifiers for other components.
+    */
+
     [CreateAssetMenu(fileName = "GridItem", menuName = "GridMenu/GridItem")]
     public class GridItemSO : ScriptableObject
     {
