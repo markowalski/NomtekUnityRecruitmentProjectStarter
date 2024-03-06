@@ -3,23 +3,37 @@ using System.Collections.Generic;
 using NUnit.Framework;
 using UnityEngine;
 using UnityEngine.TestTools;
+using markow;
+using System;
 
 public class EntityTest
 {
-    // A Test behaves as an ordinary method
     [Test]
-    public void EntityTestSimplePasses()
+    [TestCase(ENTITY_STATE.Initialized)]
+    [TestCase(ENTITY_STATE.Detached)]
+    public void Cube_SetState__RigidbodyIsKinematicSetToTrue(ENTITY_STATE _state)
     {
-        // Use the Assert class to test conditions
+        GameObject go = new GameObject();
+        Rigidbody rb = go.AddComponent<Rigidbody>();
+
+        Cube cube = go.AddComponent<Cube>();
+        cube.SetState(_state);
+
+        Assert.IsTrue(rb.isKinematic);
     }
 
-    // A UnityTest behaves like a coroutine in Play Mode. In Edit Mode you can use
-    // `yield return null;` to skip a frame.
     [UnityTest]
-    public IEnumerator EntityTestWithEnumeratorPasses()
+    public IEnumerator CubeEater_SetStateToDestroyed_EntityIsProperlyDestroyed()
     {
-        // Use the Assert class to test conditions.
-        // Use yield to skip a frame.
-        yield return null;
+        GameObject go = new GameObject();
+        Rigidbody rb = go.AddComponent<Rigidbody>();
+        CubeEater cubeEater = go.AddComponent<CubeEater>();
+        cubeEater.SetState(ENTITY_STATE.Destroyed);
+
+        yield return new WaitForSeconds(1f);
+
+        Assert.IsFalse(go);
     }
+
+
 }
