@@ -23,6 +23,7 @@ namespace markow
 
         private List<GridItem> instantiatedItems = new List<GridItem>();
         private RectTransform rTransform;
+        private float xPos;
 
         private void Awake()
         {
@@ -38,12 +39,18 @@ namespace markow
 
         public void Show()
         {
-            rTransform.DOAnchorPosX(25f, .5f).SetEase(Ease.OutCubic);
+            DOTween.To(() => xPos, x => xPos = x, 0f, .5f).SetEase(Ease.OutCubic)
+            .OnUpdate(() => {
+                rTransform.anchoredPosition = new Vector2(xPos, rTransform.anchoredPosition.y);
+            });
         }
 
         public void Hide()
         {
-            rTransform.DOAnchorPosX(-rTransform.rect.width, .5f).SetEase(Ease.InCubic);
+            DOTween.To(() => xPos, x => xPos = x, -rTransform.rect.width, .5f).SetEase(Ease.InCubic)
+            .OnUpdate(() => {
+                rTransform.anchoredPosition = new Vector2(xPos, rTransform.anchoredPosition.y);
+            });
         }
 
         private void SetupGrid()
