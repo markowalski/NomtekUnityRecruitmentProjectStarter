@@ -17,6 +17,7 @@ namespace markow
         [SerializeField]
         private List<Entity> entities = new List<Entity>();
         private EntityPlacer entityPlacer;
+        private Entity currentEntity;
 
 
         private void Awake()
@@ -29,27 +30,29 @@ namespace markow
         {
             _obj.GetComponent<Entity>().SetState(ENTITY_STATE.Detached);
             OnEntityPlaceddEvDispatcher?.Invoke();
+            currentEntity = null;
         }
 
-        private void OnGridMenuItemSelectedEvHandler(ENTITY_TYPE _type)
-        {
-            SetupEntity(_type);
-        }
-
-        public void SetupEntity(ENTITY_TYPE _type)
+        public void DeployEntity(ENTITY_TYPE _type)
         {
             foreach (var entity in entities)
             {
                 if (entity.EntityType == _type)
                 {
                     GameObject entityObj = Instantiate(entity.gameObject, entityContainer);
-                    entityObj.GetComponent<Entity>().SetState(ENTITY_STATE.Initialized);
+                    currentEntity = entityObj.GetComponent<Entity>();
+                    currentEntity.SetState(ENTITY_STATE.Initialized);
                     entityPlacer.Init(entityObj);
 
                     break;
                 }
-
             }
+        }
+
+        public void UndeployEntity()
+        {
+            if (currentEntity != null) currentEntity.SetState(ENTITY_STATE.Destroyed);
+            entityPlacer.Reset();
         }
     }
 }

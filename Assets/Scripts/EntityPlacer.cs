@@ -72,5 +72,11 @@ namespace markow
             isCubeAttached = false;
             obj = null;
         }
+
+        public void Reset()
+        {
+            isCubeAttached = false;
+            obj = null;
+        }
     }
 }

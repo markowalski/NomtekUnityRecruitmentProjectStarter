@@ -20,12 +20,21 @@ namespace markow
 
         private void OnGridMenuItemSelectedEvHandler(ENTITY_TYPE _type)
         {
-            entityManager.SetupEntity(_type);
+            entityManager.DeployEntity(_type);
         }
 
         private void OnEntityPlaceddEvHandler()
         {
             gridMenu.Show();
+        }
+
+        private void Update()
+        {
+            if (Input.GetKey(KeyCode.Escape)) 
+            {
+                gridMenu.Show();
+                entityManager.UndeployEntity();
+            }
         }
     }
 }
