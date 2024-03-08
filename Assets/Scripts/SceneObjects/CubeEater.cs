@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 namespace markow
@@ -50,8 +51,20 @@ namespace markow
 
         private void OnDetachedStateEnter()
         {
-            // Unlike Cube, when CubeEater is released, it starts an action sequence beginning with searching for the nearest target.
-            FindClosestTarget();
+            // Invoke a Coroutine that cyclically checks if the CubeEater's targets exist on the scene
+            StartCoroutine(TryFindClosestTarget());
+        }
+
+        // For optimization reasons, there's no need to call the method every frame in Update, a Coroutine is better suited for this
+        private IEnumerator TryFindClosestTarget()
+        {
+            // As long as true is true (which means always), perform the loop
+            while (true)
+            {
+                FindClosestTarget();
+
+                yield return new WaitForSeconds(.25f);
+            }
         }
 
         private void OnDestroyedStateEnter()
@@ -62,6 +75,8 @@ namespace markow
         // Method called every time CubeEater is released or has just destroyed another target.
         private void FindClosestTarget()
         {
+            if (target) return;
+
             // Find all objects in the scene with the tag.
             GameObject[] targets = GameObject.FindGameObjectsWithTag(targetTag);
 
@@ -132,7 +147,8 @@ namespace markow
                 // Retrieve information from the object and set its state to Destroyed.
                 collision.gameObject.GetComponent<Entity>().SetState(ENTITY_STATE.Destroyed);
 
-                // Then search for the next target.
+                //  Then search for the next target. 
+                //  I left the invocation of this method to allow CubeEater to move smoothly from object to object, not waiting for the Coroutine call
                 FindClosestTarget();
             }
         }
