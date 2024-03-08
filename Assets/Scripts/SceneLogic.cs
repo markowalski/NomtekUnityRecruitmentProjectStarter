@@ -13,6 +13,8 @@ namespace markow
 
     public class SceneLogic : MonoBehaviour
     {
+        public const string TAG_FLOOR = "Floor";
+
         // reference to EntityManager
         [SerializeField]
         private EntityManager entityManager;

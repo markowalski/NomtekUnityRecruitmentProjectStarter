@@ -75,7 +75,7 @@ namespace markow
             if (Physics.Raycast(ray, out hit, Mathf.Infinity, ~ignoredLayerMask))
             {
                 // execute if the raycast hits an object with the "Floor" Tag
-                if (hit.collider.gameObject.CompareTag("Floor"))
+                if (hit.collider.gameObject.CompareTag(Tags.Floor))
                 {
                     // to the hit position returned by hit, we add half the height of the object so it doesn't sink into the floor
                     obj.transform.position = hit.point + new Vector3(0, obj.transform.localScale.y / 2, 0);

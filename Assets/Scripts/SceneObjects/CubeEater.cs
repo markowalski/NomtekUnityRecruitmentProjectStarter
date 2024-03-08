@@ -11,9 +11,6 @@ namespace markow
 
     public class CubeEater : Entity
     {
-        // Tag of objects that Eater should seek.
-        [SerializeField]
-        private string targetTag;
         // Movement speed of the Eater.
         [SerializeField]
         private float speed;
@@ -78,7 +75,7 @@ namespace markow
             if (target) return;
 
             // Find all objects in the scene with the tag.
-            GameObject[] targets = GameObject.FindGameObjectsWithTag(targetTag);
+            GameObject[] targets = GameObject.FindGameObjectsWithTag(Tags.Cube);
 
             // Set the minimum distance to the maximum value.
             float minDistance = Mathf.Infinity;
@@ -142,13 +139,16 @@ namespace markow
         void OnCollisionEnter(Collision collision)
         {
             // If the collision is with an object with the tag.
-            if (entityState == ENTITY_STATE.Detached && collision.gameObject.CompareTag(targetTag))
+            if (entityState == ENTITY_STATE.Detached && collision.gameObject.CompareTag(Tags.Cube))
             {
                 // Retrieve information from the object and set its state to Destroyed.
                 collision.gameObject.GetComponent<Entity>().SetState(ENTITY_STATE.Destroyed);
 
+                //  Target field is ready for another target
+                target = null;
+
                 //  Then search for the next target. 
-                //  I left the invocation of this method to allow CubeEater to move smoothly from object to object, not waiting for the Coroutine call
+                //  I left the call of this method to allow CubeEater to move smoothly from object to object, not waiting for the Coroutine call
                 FindClosestTarget();
             }
         }
