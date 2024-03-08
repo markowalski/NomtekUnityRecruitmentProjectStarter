@@ -71,10 +71,24 @@ namespace markow
         //  Call the method when the Cube stops colliding with an object
         private void OnCollisionExit(Collision collision)
         {
-            //  If that object is Floor, change the state to Undetected
+            // If the collision object is Floor
             if (collision.gameObject.tag == Tags.Floor)
             {
-                SetState(ENTITY_STATE.Undetected);
+                // Perform additional verification to check if there is a Floor under the object. It may happen that the object loses contact with the floor due to an impact, but
+                // the floor is still beneath it. Therefore, an additional raycast is necessary, cast downward from the object, looking for a collider on the Floor layer.
+                // If the Raycast hits nothing, it indicates that the object is indeed beyond the Floor and should change its state to Undetected
+
+                // Floor layer is set to position 8 in the Tags & Layers Window
+                int layerMask = 1 << 8;
+
+                RaycastHit hit;
+                float distanceToCheck = Mathf.Infinity;
+                bool isFloorBelow = Physics.Raycast(transform.position, -Vector3.up, out hit, distanceToCheck, layerMask);
+                
+                if (!isFloorBelow)
+                {
+                    SetState(ENTITY_STATE.Undetected);
+                }
             }
         }
     }

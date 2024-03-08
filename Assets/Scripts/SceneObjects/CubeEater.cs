@@ -18,8 +18,8 @@ namespace markow
         [SerializeField]
         private float angularSpeed;
 
-        // Variable storing information about the Eater's closest target.
-        private Transform target;
+        // Variable storing information about the Eater's closest Cube.
+        private Cube target;
 
         public override void SetState(ENTITY_STATE _state)
         {
@@ -72,7 +72,7 @@ namespace markow
         // Method called every time CubeEater is released or has just destroyed another target.
         private void FindClosestTarget()
         {
-            if (target) return;
+            if (target && target.EntityState == ENTITY_STATE.Detached) return;
 
             // Find all objects in the scene with the tag.
             GameObject[] targets = GameObject.FindGameObjectsWithTag(Tags.Cube);
@@ -80,15 +80,15 @@ namespace markow
             // Set the minimum distance to the maximum value.
             float minDistance = Mathf.Infinity;
 
-            GameObject closest = null;
-            Entity targetEntity = null;
+            Cube closestCube = null;
+            Cube targetCube = null;
 
             // Iterate over all objects with the tag.
             foreach (GameObject potentialTarget in targets)
             {
                 // Get the Entity component from each object and check if the target is indeed released on the Floor, if not, skip to the next object.
-                targetEntity = potentialTarget.GetComponent<Entity>();
-                if (targetEntity && targetEntity.EntityState != ENTITY_STATE.Detached) continue;
+                targetCube = potentialTarget.GetComponent<Cube>();
+                if (targetCube && targetCube.EntityState != ENTITY_STATE.Detached) continue;
 
                 // Get the distance to the object.
                 float distance = Vector3.Distance(transform.position, potentialTarget.transform.position);
@@ -96,15 +96,15 @@ namespace markow
                 // If the distance is smaller than minDistance, overwrite it. This way, the shortest distance is always recorded.
                 if (distance < minDistance)
                 {
-                    closest = potentialTarget;
+                    closestCube = potentialTarget.GetComponent<Cube>();
                     minDistance = distance;
                 }
             }
 
             // If the closest object was found and exists, assign it as the target.
-            if (closest != null)
+            if (closestCube != null)
             {
-                target = closest.transform;
+                target = closestCube;
             }
             else
             {
@@ -124,7 +124,8 @@ namespace markow
             if (entityState == ENTITY_STATE.Detached && target != null)
             {
                 // Determine the direction vector based on the positions of CubeEater and its target.
-                Vector3 direction = (target.position - transform.position).normalized;
+                Vector3 direction = (target.transform.position - transform.position).normalized;
+                direction.y = 0f;
                 // Move CubeEater in the specified direction.
                 transform.position += direction * speed * Time.deltaTime;
 
